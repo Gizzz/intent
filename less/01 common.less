@@ -1,0 +1,204 @@
+// =====================
+// resets, overridings
+// =====================
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+ul {
+	list-style: none;
+}
+
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+// =====================
+// common
+// =====================
+
+@orange: #ea5a4b;
+
+@bitter: "Bitter";
+@helvetica-neue: 'Hevletica Neue';
+
+@font-face {
+    font-family: 'Hevletica Neue';
+    font-weight: 500;
+    src: url('../fonts/helvetica-neue-medium.woff') format('woff');
+}
+
+
+body {
+
+}
+
+a {
+	text-decoration: none;
+}
+
+.layout-center {
+	width: 940px;
+	margin: auto;
+}
+
+header.page-header {
+	.line-1 {
+		background: url("../img/bg-dark-blue-lined.jpg") repeat;
+		font-size: 0;
+
+        .icons {
+            float: right;
+            line-height: 47px;
+
+            a {
+			    display: inline-block;
+			    vertical-align: middle;
+
+                &:not(:last-child) {
+                    margin-right: 17px;
+                }
+
+			    &.tw {
+				    background: url("../img/twitter.svg") no-repeat 50% 50%;
+                    width: 26px;
+                    height: 14px;
+			    }
+
+                &.fb {
+				    background: url("../img/facebook.svg") no-repeat 50% 50%;
+                    width: 8px;
+                    height: 16px;
+			    }
+
+                &.db {
+				    background: url("../img/dribbble.svg") no-repeat 50% 50%;
+                    width: 16px;
+                    height: 16px;
+			    }
+
+                &.rss {
+				    background: url("../img/rss.svg") no-repeat 50% 50%;
+                    width: 17px;
+                    height: 17px;
+			    }
+		    }
+        }
+	}
+
+	.line-2 {
+		.logo {
+			display: inline-block;
+			font: 400 24px / 1 @bitter;
+			font-size: 0;
+			line-height: 56px;
+
+			// &:before {
+			// 	display: inline-block;
+			// 	content: "i";
+			// 	width: 34px;
+			// 	line-height: 34px;
+			// 	margin-right: 10px;
+			// 	background: @orange;
+			// 	color: #fff;
+			// 	text-align: center;
+			// 	vertical-align: middle;
+			// }
+
+			i {
+				display: inline-block;
+				width: 34px;
+				line-height: 34px;
+				margin-right: 10px;
+				background: @orange;
+				color: #fff;
+				text-align: center;
+				vertical-align: middle;
+				font-size: 24px;
+				font-style: normal;
+			}
+
+			.text {
+				display: inline-block;
+				vertical-align: middle;
+				font-size: 24px;
+				color: #000;
+
+				.orange {
+					color: @orange;
+				}
+			}
+		}
+
+		.menu {
+			float: right;
+			font: 500 12px / 1 @helvetica-neue;
+
+			li {
+				display: inline-block;
+
+				&:not(:last-child) {
+					margin-right: 27px;
+				}
+
+				a {
+					display: inline-block;
+					color: #252525;
+					text-transform: uppercase;
+					line-height: 56px;
+					vertical-align: middle;
+
+					&:hover, &.active {
+						color: orange;
+					}
+				}
+			}
+		}
+	}
+}
+
+// =====================
+// specific
+// =====================
+
+.slider-slides {
+	background: url(../img/bg-dark-blue-lined.jpg);
+
+	.slide {
+		display: none;
+		position: relative;
+		width: 1020px;
+		height: 450px;
+		margin: auto;
+
+		&:first-child {
+			display: block;
+		}
+
+		.bg-img {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+		}
+
+		.info {
+			position: absolute;
+			left: 40px;
+			top: 97px;
+
+			p {
+				padding: 12px 14px;
+				background: rgba(0, 0, 0, 0.75);
+				color: #fff;
+				font: 700 24px / 1 @bitter;
+				color: #fff;
+			}
+		}
+	}
+}
