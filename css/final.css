@@ -9,7 +9,7 @@
 html {
   font-family: sans-serif; /* 1 */
   -ms-text-size-adjust: 100%; /* 2 */
-  -webkit-text-size-adjust: 100% /* 2 */
+  -webkit-text-size-adjust: 100%; /* 2 */
 }
 
 /**
@@ -56,7 +56,7 @@ canvas,
 progress,
 video {
   display: inline-block; /* 1 */
-  vertical-align: baseline /* 2 */
+  vertical-align: baseline; /* 2 */
 }
 
 /**
@@ -209,6 +209,7 @@ figure {
  */
 
 hr {
+  -moz-box-sizing: content-box;
   box-sizing: content-box;
   height: 0;
 }
@@ -255,7 +256,7 @@ select,
 textarea {
   color: inherit; /* 1 */
   font: inherit; /* 2 */
-  margin: 0 /* 3 */
+  margin: 0; /* 3 */
 }
 
 /**
@@ -291,7 +292,7 @@ html input[type="button"], /* 1 */
 input[type="reset"],
 input[type="submit"] {
   -webkit-appearance: button; /* 2 */
-  cursor: pointer /* 3 */
+  cursor: pointer; /* 3 */
 }
 
 /**
@@ -333,7 +334,7 @@ input {
 input[type="checkbox"],
 input[type="radio"] {
   box-sizing: border-box; /* 1 */
-  padding: 0 /* 2 */
+  padding: 0; /* 2 */
 }
 
 /**
@@ -354,7 +355,9 @@ input[type="number"]::-webkit-outer-spin-button {
  */
 
 input[type="search"] {
-  -webkit-appearance: textfield; /* 1 */ /* 2 */
+  -webkit-appearance: textfield; /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box; /* 2 */
   box-sizing: content-box;
 }
 
@@ -386,7 +389,7 @@ fieldset {
 
 legend {
   border: 0; /* 1 */
-  padding: 0 /* 2 */
+  padding: 0; /* 2 */
 }
 
 /**
@@ -605,7 +608,7 @@ textarea {
 .clearfix:before,
 .clearfix:after {
     content: " "; /* 1 */
-    display: table /* 2 */
+    display: table; /* 2 */
 }
 
 .clearfix:after {
@@ -724,8 +727,16 @@ html {
 }
 @font-face {
   font-family: 'Hevletica Neue';
+  font-weight: 400;
+  src: url('../fonts/helvetica-neue-regular.woff') format('woff');
+}
+@font-face {
+  font-family: 'Hevletica Neue';
   font-weight: 500;
   src: url('../fonts/helvetica-neue-medium.woff') format('woff');
+}
+body {
+  line-height: 1;
 }
 a {
   text-decoration: none;
@@ -818,6 +829,8 @@ header.page-header .line-2 .menu li a.active {
   color: orange;
 }
 .slider-slides {
+  position: relative;
+  z-index: 10;
   background: url(../img/bg-dark-blue-lined.jpg);
 }
 .slider-slides .slide {
@@ -827,7 +840,7 @@ header.page-header .line-2 .menu li a.active {
   height: 450px;
   margin: auto;
 }
-.slider-slides .slide:first-child {
+.slider-slides .slide.active {
   display: block;
 }
 .slider-slides .slide .bg-img {
@@ -846,5 +859,228 @@ header.page-header .line-2 .menu li a.active {
   font: 700 24px / 1 "Bitter";
   color: #fff;
 }
-
-/*# sourceMappingURL=final.css.map */
+.slider-slides .slide .info p:not(:last-child) {
+  margin-bottom: 1px;
+}
+.slider-slides .slide .info .controls {
+  font-size: 0;
+}
+.slider-slides .slide .info .controls i {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  margin-top: 12px;
+  cursor: pointer;
+}
+.slider-slides .slide .info .controls i.prev {
+  background: #ea5a4b url(../img/icon-slider-prev.svg) no-repeat 50% 50%;
+  margin-right: 5px;
+}
+.slider-slides .slide .info .controls i.next {
+  background: #ea5a4b url(../img/icon-slider-next.svg) no-repeat 50% 50%;
+}
+.central-panel {
+  position: relative;
+  top: -28px;
+  background: url(../img/bg-noise-white.jpg);
+}
+.central-panel .panel-header {
+  position: relative;
+  z-index: 20;
+  padding: 28px 26px;
+  background: url(../img/bg-dark-blue-lined.jpg);
+}
+.central-panel .panel-header .slider-thumbnails {
+  font-size: 0;
+}
+.central-panel .panel-header .slider-thumbnails .item {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
+.central-panel .panel-header .slider-thumbnails .item:not(:last-child) {
+  margin-right: 15px;
+}
+.central-panel .panel-header .slider-thumbnails .item.active:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #ea5a4b;
+  z-index: 1;
+}
+.central-panel .panel-header .slider-thumbnails .item img {
+  display: inline-block;
+  position: relative;
+  width: 75px;
+  height: 75px;
+}
+.central-panel .panel-content {
+  position: relative;
+  z-index: 20;
+  border: 1px solid #dfdfdf;
+  border-top: 1px solid transparent;
+  padding: 48px 25px 26px;
+  background: #fff;
+}
+.central-panel .panel-content .feature {
+  float: left;
+  width: calc(279.33333333px);
+}
+.central-panel .panel-content .feature:not(:last-child) {
+  margin-right: 25px;
+}
+.central-panel .panel-content .feature h1 {
+  font: 400 18px / 31px "Bitter";
+}
+.central-panel .panel-content .feature h1 i {
+  display: inline-block;
+  width: 31px;
+  height: 31px;
+  margin-right: 15px;
+  background: #25282a;
+  vertical-align: top;
+}
+.central-panel .panel-content .feature:nth-child(1) h1 i {
+  background: #25282a url(../img/icon-feature-1.svg) no-repeat 50% 50%;
+}
+.central-panel .panel-content .feature:nth-child(2) h1 i {
+  background: #25282a url(../img/icon-feature-2.svg) no-repeat 50% 50%;
+}
+.central-panel .panel-content .feature:nth-child(3) h1 i {
+  background: #25282a url(../img/icon-feature-3.svg) no-repeat 50% 50%;
+}
+.central-panel .panel-content .feature p {
+  width: 270px;
+  margin-top: 17px;
+  font: 400 14px / 16px 'Hevletica Neue';
+  color: #5c5c5c;
+}
+.central-panel .panel-content .slogan {
+  margin-top: 45px;
+  text-align: center;
+  font: 700 18px / 1 "Bitter";
+}
+.central-panel .panel-content .slogan .orange {
+  display: inline-block;
+  margin: 0 3px;
+  padding: 9px 13px 10px;
+  background: #ea5a4b;
+  color: #fff;
+}
+.central-panel .panel-content .works {
+  margin-top: 47px;
+}
+.central-panel .panel-content .works .links li {
+  display: inline-block;
+  cursor: pointer;
+  padding: 10px 8px 9px;
+  font: 400 14px / 16px "Bitter";
+  color: #252525;
+}
+.central-panel .panel-content .works .links li:not(:last-child) {
+  margin-right: 12px;
+}
+.central-panel .panel-content .works .links li:hover,
+.central-panel .panel-content .works .links li.active {
+  background: #ea5a4b;
+  color: #fff;
+}
+.central-panel .panel-content .works .row {
+  font-size: 0;
+}
+.central-panel .panel-content .works .row:first-of-type {
+  margin-top: 27px;
+}
+.central-panel .panel-content .works .row:not(:last-child) {
+  margin-bottom: 20px;
+}
+.central-panel .panel-content .works .row .item {
+  display: inline-block;
+}
+.central-panel .panel-content .works .row .item:not(:last-child) {
+  margin-right: 21.333px;
+}
+.central-panel .panel-content .works .row .item .bg-img {
+  width: 206px;
+  height: 120px;
+}
+footer.page-footer {
+  position: relative;
+}
+footer.page-footer .container {
+  position: absolute;
+  top: -55px;
+  width: 100%;
+  border-top: 8px solid #ea5a4b;
+  background: url(../img/bg-dark-blue-lined.jpg);
+  padding: 70px 0 45px;
+  font-size: 0;
+}
+footer.page-footer .container h2 {
+  font: 500 14px / 1 'Hevletica Neue';
+  text-transform: uppercase;
+  color: #fff;
+  margin-bottom: 25px;
+}
+footer.page-footer .container .col {
+  float: left;
+  width: 300px;
+}
+footer.page-footer .container .col:not(:last-child) {
+  margin-right: 20px;
+}
+footer.page-footer .container .posts ul li {
+  width: 290px;
+  padding-bottom: 15px;
+}
+footer.page-footer .container .posts ul li:not(:first-child) {
+  padding-top: 17px;
+}
+footer.page-footer .container .posts ul li:not(:last-child) {
+  border-bottom: 1px solid #3b3b3b;
+}
+footer.page-footer .container .posts ul li a {
+  display: inline-block;
+  font: 700 14px / 18px "Bitter";
+  color: #adadad;
+}
+footer.page-footer .container .about p {
+  font: 700 14px / 18px 'Hevletica Neue';
+  color: #adadad;
+}
+footer.page-footer .container .social .row {
+  font-size: 0;
+}
+footer.page-footer .container .social .row a {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+}
+footer.page-footer .container .social .row a:not(:last-child) {
+  margin-right: 8px;
+}
+footer.page-footer .container .social .row a.rss {
+  background: url(../img/icon-social-rss.png);
+}
+footer.page-footer .container .social .row a.fb {
+  background: url(../img/icon-social-fb.png);
+}
+footer.page-footer .container .social .row a.tw {
+  background: url(../img/icon-social-tw.png);
+}
+footer.page-footer .container .social .row a.em {
+  background: url(../img/icon-social-em.png);
+}
+footer.page-footer .container .social .row a.tum {
+  background: url(../img/icon-social-tum.png);
+}
+footer.page-footer .container .social .row a.pin {
+  background: url(../img/icon-social-pin.png);
+}
+footer.page-footer .container .social .row a.vim {
+  background: url(../img/icon-social-vim.png);
+}
+footer.page-footer .container .social .row a.zer {
+  background: url(../img/icon-social-zer.png);
+}
