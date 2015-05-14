@@ -382,12 +382,14 @@ header.page-header {
 					margin-top: 27px;
 				}
 
-				&:not(:last-child) {
-					margin-bottom: 20px;
+				&:not(:first-child) {
+					margin-top: 20px;
 				}
 
 				.item {
 					display: inline-block;
+					position: relative;
+					cursor: pointer;
 
 					&:not(:last-child) {
 						margin-right: 21.333px;
@@ -396,6 +398,25 @@ header.page-header {
 					.bg-img {
 						width: 206px;
 						height: 120px;
+					}
+
+					.overlay {
+						position: absolute;
+						bottom: 0;
+						width: 100%;
+						height: 0px;
+						background: rgba(0, 0, 0, 0.75);
+						font: 700 14px / 1 @bitter;
+						color: #fff;
+						line-height: 30px;
+						padding-left: 10px;
+						opacity: 0;
+						transition: all .25s;
+					}
+
+					&:hover .overlay {
+						height: 30px;
+						opacity: 1;
 					}
 				}
 			}
@@ -435,7 +456,6 @@ footer.page-footer {
 			ul {
 				li {
 					width: 290px;
-					padding-bottom: 15px;
 
 					&:not(:first-child) {
 						padding-top: 17px;
@@ -443,6 +463,7 @@ footer.page-footer {
 
 					&:not(:last-child) {
 						border-bottom: 1px solid #3b3b3b;
+						padding-bottom: 15px;
 					}
 
 					a {
@@ -465,6 +486,10 @@ footer.page-footer {
 			.row {
 				font-size: 0;
 
+				&:not(:first-child) {
+					margin-top: 8px;
+				}
+
 				a {
 					display: inline-block;
 					width: 30px;
@@ -473,6 +498,8 @@ footer.page-footer {
 					&:not(:last-child) {
 						margin-right: 8px;
 					}
+
+					// row 1
 
 					&.rss {
 						background: url(../img/icon-social-rss.png);
@@ -504,6 +531,58 @@ footer.page-footer {
 
 					&.zer {
 						background: url(../img/icon-social-zer.png);
+					}
+
+					// row 2
+
+					&.pic {
+						background: url(../img/icon-social-pic.png);
+					}
+
+					&.stum {
+						background: url(../img/icon-social-stum.png);
+					}
+
+					&.sky {
+						background: url(../img/icon-social-sky.png);
+					}
+
+					&.redd {
+						background: url(../img/icon-social-redd.png);
+					}
+
+					&.ever {
+						background: url(../img/icon-social-ever.png);
+					}
+
+					&.be {
+						background: url(../img/icon-social-be.png);
+					}
+
+					&.drib {
+						background: url(../img/icon-social-drib.png);
+					}
+
+					&.digg {
+						background: url(../img/icon-social-digg.png);
+					}
+
+					// row 3
+
+					&.blog {
+						background: url(../img/icon-social-blog.png);
+					}
+
+					&.flik {
+						background: url(../img/icon-social-flik.png);
+					}
+
+					&.in {
+						background: url(../img/icon-social-in.png);
+					}
+
+					&.gp {
+						background: url(../img/icon-social-gp.png);
 					}
 				}
 			}

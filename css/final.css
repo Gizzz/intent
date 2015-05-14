@@ -992,11 +992,13 @@ header.page-header .line-2 .menu li a.active {
 .central-panel .panel-content .works .row:first-of-type {
   margin-top: 27px;
 }
-.central-panel .panel-content .works .row:not(:last-child) {
-  margin-bottom: 20px;
+.central-panel .panel-content .works .row:not(:first-child) {
+  margin-top: 20px;
 }
 .central-panel .panel-content .works .row .item {
   display: inline-block;
+  position: relative;
+  cursor: pointer;
 }
 .central-panel .panel-content .works .row .item:not(:last-child) {
   margin-right: 21.333px;
@@ -1004,6 +1006,23 @@ header.page-header .line-2 .menu li a.active {
 .central-panel .panel-content .works .row .item .bg-img {
   width: 206px;
   height: 120px;
+}
+.central-panel .panel-content .works .row .item .overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 0px;
+  background: rgba(0, 0, 0, 0.75);
+  font: 700 14px / 1 "Bitter";
+  color: #fff;
+  line-height: 30px;
+  padding-left: 10px;
+  opacity: 0;
+  transition: all .25s;
+}
+.central-panel .panel-content .works .row .item:hover .overlay {
+  height: 30px;
+  opacity: 1;
 }
 footer.page-footer {
   position: relative;
@@ -1032,13 +1051,13 @@ footer.page-footer .container .col:not(:last-child) {
 }
 footer.page-footer .container .posts ul li {
   width: 290px;
-  padding-bottom: 15px;
 }
 footer.page-footer .container .posts ul li:not(:first-child) {
   padding-top: 17px;
 }
 footer.page-footer .container .posts ul li:not(:last-child) {
   border-bottom: 1px solid #3b3b3b;
+  padding-bottom: 15px;
 }
 footer.page-footer .container .posts ul li a {
   display: inline-block;
@@ -1051,6 +1070,9 @@ footer.page-footer .container .about p {
 }
 footer.page-footer .container .social .row {
   font-size: 0;
+}
+footer.page-footer .container .social .row:not(:first-child) {
+  margin-top: 8px;
 }
 footer.page-footer .container .social .row a {
   display: inline-block;
@@ -1083,4 +1105,40 @@ footer.page-footer .container .social .row a.vim {
 }
 footer.page-footer .container .social .row a.zer {
   background: url(../img/icon-social-zer.png);
+}
+footer.page-footer .container .social .row a.pic {
+  background: url(../img/icon-social-pic.png);
+}
+footer.page-footer .container .social .row a.stum {
+  background: url(../img/icon-social-stum.png);
+}
+footer.page-footer .container .social .row a.sky {
+  background: url(../img/icon-social-sky.png);
+}
+footer.page-footer .container .social .row a.redd {
+  background: url(../img/icon-social-redd.png);
+}
+footer.page-footer .container .social .row a.ever {
+  background: url(../img/icon-social-ever.png);
+}
+footer.page-footer .container .social .row a.be {
+  background: url(../img/icon-social-be.png);
+}
+footer.page-footer .container .social .row a.drib {
+  background: url(../img/icon-social-drib.png);
+}
+footer.page-footer .container .social .row a.digg {
+  background: url(../img/icon-social-digg.png);
+}
+footer.page-footer .container .social .row a.blog {
+  background: url(../img/icon-social-blog.png);
+}
+footer.page-footer .container .social .row a.flik {
+  background: url(../img/icon-social-flik.png);
+}
+footer.page-footer .container .social .row a.in {
+  background: url(../img/icon-social-in.png);
+}
+footer.page-footer .container .social .row a.gp {
+  background: url(../img/icon-social-gp.png);
 }
