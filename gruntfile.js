@@ -19,6 +19,7 @@ module.exports = function(grunt) {
                 src: [
                     '*.html',
                     'css/*.css',
+                    'js/**/*.js'
                 ]
             },
             options: {

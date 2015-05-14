@@ -188,57 +188,63 @@ header.page-header {
 	z-index: 10;
 	background: url(../img/bg-dark-blue-lined.jpg);
 
-	.slide {
-		display: none;
+	.container {
 		position: relative;
 		width: 1020px;
-		height: 450px;
+		min-height: 450px;
 		margin: auto;
 
-		&.active {
-			display: block;
-		}
-
-		.bg-img {
+		.slide {
+			display: none;
 			position: absolute;
 			width: 100%;
 			height: 100%;
-		}
 
-		.info {
-			position: absolute;
-			left: 40px;
-			top: 97px;
-
-			p {
-				padding: 12px 14px;
-				background: rgba(0, 0, 0, 0.75);
-				color: #fff;
-				font: 700 24px / 1 @bitter;
-				color: #fff;
-
-				&:not(:last-child) {
-					margin-bottom: 1px;
-				}
+			&.active {
+				display: block;
 			}
 
-			.controls {
-				font-size: 0;
+			.bg-img {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+			}
 
-				i {
-					display: inline-block;
-					width: 30px;
-					height: 30px;
-					margin-top: 12px;
-					cursor: pointer;
+			.info {
+				position: absolute;
+				left: 40px;
+				top: 97px;
 
-					&.prev {
-						background: @orange url(../img/icon-slider-prev.svg) no-repeat 50% 50%;
-						margin-right: 5px;
+				p {
+					padding: 12px 14px;
+					background: rgba(0, 0, 0, 0.75);
+					color: #fff;
+					font: 700 24px / 1 @bitter;
+					color: #fff;
+
+					&:not(:last-child) {
+						margin-bottom: 1px;
 					}
+				}
 
-					&.next {
-						background: @orange url(../img/icon-slider-next.svg) no-repeat 50% 50%;
+				.controls {
+					font-size: 0;
+
+					i {
+						display: inline-block;
+						width: 30px;
+						height: 30px;
+						margin-top: 12px;
+						cursor: pointer;
+
+						&.prev {
+							background: @orange url(../img/icon-slider-prev.svg) no-repeat 50% 50%;
+							margin-right: 5px;
+						}
+
+						&.next {
+							background: @orange url(../img/icon-slider-next.svg) no-repeat 50% 50%;
+						}
 					}
 				}
 			}
@@ -269,13 +275,19 @@ header.page-header {
 					margin-right: 15px;
 				}
 
-				&.active:before {
+				&:before {
 					content: "";
 					position: absolute;
 					width: 100%;
 					height: 100%;
 					border: 2px solid @orange;
 					z-index: 1;
+					opacity: 0;
+					transition: opacity .2s;
+				}
+
+				&.active:before {
+					opacity: 1;
 				}
 
 				img {

@@ -833,50 +833,55 @@ header.page-header .line-2 .menu li a.active {
   z-index: 10;
   background: url(../img/bg-dark-blue-lined.jpg);
 }
-.slider-slides .slide {
-  display: none;
+.slider-slides .container {
   position: relative;
   width: 1020px;
-  height: 450px;
+  min-height: 450px;
   margin: auto;
 }
-.slider-slides .slide.active {
-  display: block;
-}
-.slider-slides .slide .bg-img {
+.slider-slides .container .slide {
+  display: none;
   position: absolute;
   width: 100%;
   height: 100%;
 }
-.slider-slides .slide .info {
+.slider-slides .container .slide.active {
+  display: block;
+}
+.slider-slides .container .slide .bg-img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.slider-slides .container .slide .info {
   position: absolute;
   left: 40px;
   top: 97px;
 }
-.slider-slides .slide .info p {
+.slider-slides .container .slide .info p {
   padding: 12px 14px;
   background: rgba(0, 0, 0, 0.75);
   font: 700 24px / 1 "Bitter";
   color: #fff;
 }
-.slider-slides .slide .info p:not(:last-child) {
+.slider-slides .container .slide .info p:not(:last-child) {
   margin-bottom: 1px;
 }
-.slider-slides .slide .info .controls {
+.slider-slides .container .slide .info .controls {
   font-size: 0;
 }
-.slider-slides .slide .info .controls i {
+.slider-slides .container .slide .info .controls i {
   display: inline-block;
   width: 30px;
   height: 30px;
   margin-top: 12px;
   cursor: pointer;
 }
-.slider-slides .slide .info .controls i.prev {
+.slider-slides .container .slide .info .controls i.prev {
   background: #ea5a4b url(../img/icon-slider-prev.svg) no-repeat 50% 50%;
   margin-right: 5px;
 }
-.slider-slides .slide .info .controls i.next {
+.slider-slides .container .slide .info .controls i.next {
   background: #ea5a4b url(../img/icon-slider-next.svg) no-repeat 50% 50%;
 }
 .central-panel {
@@ -901,13 +906,18 @@ header.page-header .line-2 .menu li a.active {
 .central-panel .panel-header .slider-thumbnails .item:not(:last-child) {
   margin-right: 15px;
 }
-.central-panel .panel-header .slider-thumbnails .item.active:before {
+.central-panel .panel-header .slider-thumbnails .item:before {
   content: "";
   position: absolute;
   width: 100%;
   height: 100%;
   border: 2px solid #ea5a4b;
   z-index: 1;
+  opacity: 0;
+  transition: opacity .2s;
+}
+.central-panel .panel-header .slider-thumbnails .item.active:before {
+  opacity: 1;
 }
 .central-panel .panel-header .slider-thumbnails .item img {
   display: inline-block;
